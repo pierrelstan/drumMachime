@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-import Drum from "./components/drum";
+import DrumPad from "./components/drumpad";
+
 
 class App extends Component {
+  state = {
+    display: "Play the sound"
+  }
   render() {
+   const {display }= this.state;
     return (
-      <div className="App">
+      <div id="drum-machine">
         <h1>Drum Machine</h1>
-        <Drum />
+        <h2>{display}</h2>
+        <DrumPad 
+      
+        />
       </div>
     );
   }

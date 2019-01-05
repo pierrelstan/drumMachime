@@ -8,7 +8,6 @@ class DrumPad extends Component {
   
 //fix Arrow biding
 PlaySound=(Sound,Name)=>{
-  
     this.audio = new Audio(Sound);
     this.audio.currentTime = 0;
     this.audio.play();
@@ -34,9 +33,10 @@ this.setState({
         this.audio.currentTime = 0;
         this.setState({
             display: Name
+        
         })
     }
-    }
+}
     render(){
        const {display}= this.state;
         return (

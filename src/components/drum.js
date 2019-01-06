@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const Drum = ({id, Sound,Name,onClick})=> (
-      
-            <div onClick={() => onClick(Sound, Name, id)} className="drum-pad" id={id}>
-            <audio key={id} src={Sound} className="clip" id={id} />{id}
-            
-        </div>
-    )
+class Drum extends Component {
+    render(){
+        const { id, Sound, Name, onClick } = this.props;
+        return (
+            <button onClick={() => onClick(Sound, Name, id)} className="drum-pad" id={id}>
+                <audio className="clip" src={Sound} id={id}>
+                </audio>
+                {id}
+            </button>
+        )
+    }
+}
 
    
 export default Drum;

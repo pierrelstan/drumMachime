@@ -3,40 +3,23 @@ import Drum, { drumData }from "./drum";
 
 class DrumPad extends Component {
    state={
-       display:"play sound"
+       display:"play sound",
+       id: []
    }
   
 //fix Arrow biding
-PlaySound=(Sound,Name)=>{
+PlaySound=(Sound,Name,id)=>{
     this.audio = new Audio(Sound);
     this.audio.currentTime = 0;
     this.audio.play();
     console.log(Name)
 console.log("i want to plays")
 this.setState({
-    display: Name
+    display: Name,
+    id:id
 })
 }
-    componentDidMount(){
-    document.addEventListener("keydown", this.handleKeyDown);
-    window.focus();
-    }
-    componentWillMount(){
-        document.removeEventListener("keydown",this.handleKeyDown)
-    }
-    //Arrow fix binding 
-    handleKeyDown=(event)=>{
-        const {id, Sound, Name} = this.props;
-        this.audio = new Audio(Sound);
-    if (event.keyCode=== id){
-        this.audio.play();
-        this.audio.currentTime = 0;
-        this.setState({
-            display: Name
-        
-        })
-    }
-}
+    
     render(){
        const {display}= this.state;
         return (
@@ -50,7 +33,6 @@ this.setState({
                         key={data.id}
                         id={data.id}
                         onClick={this.PlaySound}
-                            handleKeyDown={this.handleKeyDown}
                         />
                      )
                 }

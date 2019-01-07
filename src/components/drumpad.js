@@ -7,18 +7,7 @@ class DrumPad extends Component {
        id: []
    }
   
-//fix Arrow biding
-PlaySound=(Sound,Name,id)=>{
-    this.audio = new Audio(Sound);
-    this.audio.currentTime = 0;
-    this.audio.play();
-    console.log(Name)
-console.log("i want to plays")
-this.setState({
-    display: Name,
-    id:id
-})
-}
+
     
     render(){
        const {display}= this.state;
@@ -32,7 +21,6 @@ this.setState({
                         Sound={data.url}
                         key={data.id}
                         id={data.id}
-                        onClick={this.PlaySound}
                         />
                      )
                 }

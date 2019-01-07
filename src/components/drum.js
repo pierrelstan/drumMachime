@@ -1,12 +1,24 @@
 import React, {Component} from 'react';
 
 class Drum extends Component {
+    //fix Arrow biding
+    PlaySound = (Sound, Name, id) => {
+        this.audio = new Audio(Sound, id);
+        this.audio.currentTime = 0;
+        this.audio.play();
+        console.log(Name)
+        console.log("i want to plays")
+        this.setState({
+            display: Name,
+            id: id
+        })
+    }
     render(){
         const { id, Sound, Name, onClick } = this.props;
         return (
-            <button onClick={() => onClick(Sound, Name, id)} className="drum-pad" id={id}>
-                <audio className="clip" src={Sound} id={id}>
-                </audio>
+            <button onClick={() => onClick(Sound, Name, id)}  className="drum-pad" id={id}>
+                <audio className="clip" src={Sound} id={id} />
+               
                 {id}
             </button>
         )

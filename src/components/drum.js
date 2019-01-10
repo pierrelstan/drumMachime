@@ -1,26 +1,37 @@
 import React, {Component} from 'react';
 
 class Drum extends Component {
+
+    // componentDidMount() {
+    //     document.addEventListener('keydown', this.handleKeyPress);
+    // }
+    // componentWillUnmount() {
+    //     document.removeEventListener('keydown', this.handleKeyPress);
+    // }
+
+    // // React Component Functions
+    // handleKeyPress(e) { 
+    //     if (e.keyCode === this.props.keyCode.charCodeAt()) { 
+    //         this.PlaySound();
+    //         console.log(e.keyCode + " " + this.props.keyCode.charCodeAt());
+    //     }
+    // }
+
     //fix Arrow biding
-    PlaySound = (Sound, Name, id) => {
-        this.audio = new Audio(Sound, id);
-        this.audio.currentTime = 0;
-        this.audio.play();
-        console.log(Name)
-        console.log("i want to plays")
-        this.setState({
-            display: Name,
-            id: id
-        })
+    PlaySound = () => {
+      const { Sound} = this.props;
+      this.audio = new Audio(Sound)
+      this.audio.play();
+ 
     }
+   
     render(){
-        const { id, Sound, Name, onClick } = this.props;
+        const { id, Sound } = this.props;
         return (
-            <button onClick={() => onClick(Sound, Name, id)}  className="drum-pad" id={id}>
-                <audio className="clip" src={Sound} id={id} />
-               
+            <div className="drum-pad" onClick={this.PlaySound} id={id} >
+                <audio className="clip" src={Sound} id={id}></audio>
                 {id}
-            </button>
+            </div>
         )
     }
 }

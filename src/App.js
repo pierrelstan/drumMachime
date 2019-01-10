@@ -13,13 +13,12 @@ class App extends Component {
   }
   //fix arrow biding
   handleClickPower=()=> {
+   
     this.setState((prevState) => ({
-      power: !prevState.power
+      power: !prevState.power,
     }))
   }
-  handleDisplayClick =(e)=> {
-  console.log("e")
-  }
+  
   render() {
     const { display } = this.state;
     return (
@@ -30,7 +29,6 @@ class App extends Component {
         </button>
         <h3 id="display">{ display }</h3>
         <DrumPad 
-          onClick={this.handleDisplayClick}
         />
       </div>
     );

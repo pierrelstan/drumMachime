@@ -15,7 +15,6 @@ class DrumPad extends Component {
                         Sound={data.url}
                         key={data.id}
                         id={data.id}
-                        display={this.Display}
                         />
                      )
                 }

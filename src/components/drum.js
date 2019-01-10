@@ -19,7 +19,7 @@ class Drum extends Component {
 
     //fix Arrow biding
     PlaySound = () => {
-      const { Sound} = this.props;
+      const { Sound,  name} = this.props;
       this.audio = new Audio(Sound)
       this.audio.play();
  
@@ -28,7 +28,7 @@ class Drum extends Component {
     render(){
         const { id, Sound } = this.props;
         return (
-            <div className="drum-pad" onClick={this.PlaySound} id={id} >
+            <div className="drum-pad"  id={id} >
                 <audio className="clip" src={Sound} id={id}></audio>
                 {id}
             </div>

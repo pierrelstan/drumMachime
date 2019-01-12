@@ -1,40 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Drum extends Component {
+const Drum = ({ Name, Sound, dataid})=> 
 
-    // componentDidMount() {
-    //     document.addEventListener('keydown', this.handleKeyPress);
-    // }
-    // componentWillUnmount() {
-    //     document.removeEventListener('keydown', this.handleKeyPress);
-    // }
+(
 
-    // // React Component Functions
-    // handleKeyPress(e) { 
-    //     if (e.keyCode === this.props.keyCode.charCodeAt()) { 
-    //         this.PlaySound();
-    //         console.log(e.keyCode + " " + this.props.keyCode.charCodeAt());
-    //     }
-    // }
-
-    //fix Arrow biding
-    PlaySound = () => {
-      const { Sound,  name} = this.props;
-      this.audio = new Audio(Sound)
-      this.audio.play();
- 
-    }
-   
-    render(){
-        const { id, Sound } = this.props;
-        return (
-            <div className="drum-pad"  id={id} >
-                <audio className="clip" src={Sound} id={id}></audio>
-                {id}
-            </div>
-        )
-    }
-}
+        <div className="drum-pad" onClick={this.buttonClickByid(Name)} id={dataid} >
+            <audio src={Sound} ></audio>
+            {dataid}
+    </div>
+)
 
    
 export default Drum;

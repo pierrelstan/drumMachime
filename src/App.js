@@ -3,12 +3,15 @@ import './App.css';
 import DrumPad from "./components/drumpad";
 
 
+
 class App extends Component {
   constructor(){
     super();
     this.state={
       power:true,
-      display: "Click on the buttons"
+      display: "Click on the buttons",
+      idClick:"",
+
     }
   }
   //fix arrow biding
@@ -18,17 +21,28 @@ class App extends Component {
       power: !prevState.power,
     }))
   }
-  
+  //fix arrow biding
+  buttonClickByid=(e, Name)=> {
+this.setState({ idClick: e,
+display: Name
+})
+
+  }
+
   render() {
-    const { display } = this.state;
+    const  { display,idClick} = this.state;
     return (
       <div id="drum-machine"> 
         <h1>Drum Machine</h1>
         <button onClick={this.handleClickPower}>
           {this.state.power ? "ON": "OFF"}
         </button>
-        <h3 id="display">{ display }</h3>
+       
+
         <DrumPad 
+         display={display}
+         idClick={idClick}
+         buttonClickByid= {this.buttonClickByid}
         />
       </div>
     );

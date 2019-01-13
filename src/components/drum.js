@@ -1,15 +1,43 @@
-import React from 'react';
+import React , { Component }from 'react';
 
-const Drum = ({ Name, Sound, dataid})=> 
+class  Drum extends Component {
+    state={
+        active: false
+    }
+    componentDidMount = () => {
+        document.addEventListener('keydown', this.handleKeyPress)
+    }
+    componentWillUnmount = () => {
+        document.removeEventListener('keydown', this.handkleKeyPress)
+    }
 
-(
+    handleKeyPress = e => {
+        console.log(e.keyCode + " " + this.props.dataid)
+        
+        if (e.keyCode === this.props.dataid) {
 
-        <div className="drum-pad" onClick={this.buttonClickByid(Name)} id={dataid} >
-            <audio src={Sound} ></audio>
-            {dataid}
-    </div>
-)
+                this.setState(() => ({
+                    active: true
+                }))
+                this.props.buttonClickByid();
+                
 
+            }
+
+        
+    }
+render(){
+    return (
+        <div className="drum-pad" onClick={() => this.props.onClick(this.props.name, this.props.sound, this.props.dataid, this.props.onClick)} id={this.props.dataid} onKeyPress={this.handkleKeyPress}>
+            <audio className="clip" src={this.props.sound} id={this.props.dataid}>
+
+            </audio>
+            <span>{this.props.dataid}</span>
+
+        </div>
+    )
+}
+}
    
 export default Drum;
 

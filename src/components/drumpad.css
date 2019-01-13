@@ -1,0 +1,26 @@
+.drum-pad {
+    width: 280px;
+    height: 100px;
+    background-color: rgba(0,0,0,.2);
+    color: white;
+    border: 1px solid;
+    /* margin: 5px; */
+    font-size: 32px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.drum-pad:active {
+  background-color: #ffc107c4;
+  color: #344343;
+  border: 1px solid #fff;
+  
+}
+.title-name-audio {
+    text-align: center;
+    margin:0;
+}
+.Disabled :disabled {
+  background: #344343;
+}

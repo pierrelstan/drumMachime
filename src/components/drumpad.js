@@ -1,4 +1,5 @@
 import React  from "react";
+import './drumpad.css';
 
 
 class DrumPad extends React.Component {

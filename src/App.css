@@ -1,0 +1,38 @@
+.button-Slide {
+  flex-direction: column;
+  color:#fff;
+}
+.title-drum-machine {
+  text-align: center;
+  color: #fff;
+font-size: 72px;
+margin: 0px;
+border: 2px solid;
+
+}
+.drum-container {
+  display: flex;
+ justify-content: center;
+}
+#drum-machine {
+width: 850px;
+height: 600px;
+  padding: 35px;
+     margin-top: 0px;
+     
+      
+      background-color: #444444;
+}
+#display {
+  text-align: center;
+  color: #fff;
+}
+
+
+.drum{
+  display: flex;
+     flex-wrap: wrap;
+      width: 850px;
+        padding-top:30px;
+}
+

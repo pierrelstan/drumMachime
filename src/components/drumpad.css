@@ -1,9 +1,9 @@
 .drum-pad {
     width: 280px;
     height: 100px;
-    color: #333;
-    background-color: #ffc107c4;
-    border: 1px solid;
+    color: #fff;
+    background-color: #555;
+    border: 1px solid #2196f34f;
     /* margin: 5px; */
     font-size: 32px;
     text-align: center;
@@ -12,9 +12,9 @@
     align-items: center;
 }
 .drum-pad:active {
-  background-color: #fff;
-  color: #344343;
-  border: 1px solid #fff;
+  background-color:#ffc107;
+  color: #333;
+  border: 1px solid #333;
   
 }
 .title-name-audio {

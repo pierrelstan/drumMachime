@@ -1,10 +1,10 @@
 .button-Slide {
-  flex-direction: column;
-  color:#fff;
+flex-direction: column;
+color:#fff;
 }
 .title-drum-machine {
-  text-align: center;
-  color: #fff;
+text-align: center;
+color: #333;
 font-size: 72px;
 margin: 0px;
 border: 2px solid;
@@ -13,15 +13,19 @@ border: 2px solid;
 .drum-container {
   display: flex;
  justify-content: center;
+ background-color: #333;
+ background-image: url(./james-owen-653039-unsplash.jpg);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #drum-machine {
 width: 850px;
 height: 600px;
-  padding: 35px;
-     margin-top: 0px;
-     
-      
-      background-color: #444444;
+padding: 35px;
+margin-top: 0px;
+background-color:rgba(219, 219, 219, 0.5);
 }
 #display {
   text-align: center;
@@ -31,8 +35,8 @@ height: 600px;
 
 .drum{
   display: flex;
-     flex-wrap: wrap;
-      width: 850px;
-        padding-top:30px;
+  flex-wrap: wrap;
+  width: 850px;
+  padding-top:30px;
 }
 

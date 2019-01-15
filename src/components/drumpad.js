@@ -45,7 +45,7 @@ class DrumPad extends React.Component {
         const { name, Id, drumpad } = this.props;
 
         return (
-            <div className={`${this.state.active}` ? "drum-pad" : "drum-pad"} id={Id} onClick={this.handleDrumPadClickPlay} >
+            <button className={`${this.state.active}` ? "drum-pad" : "drum-pad"} id={Id} onClick={this.handleDrumPadClickPlay} >
                 <p className="title-name-audio">{name}</p>
                 <audio
                     className="clip" id={name} src={`${drumpad}`}
@@ -53,7 +53,7 @@ class DrumPad extends React.Component {
                 >
                 </audio>
 
-            </div>
+            </button>
         )
     }
 }

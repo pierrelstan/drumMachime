@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './components/powerbutton.css';
 import DrumPad, {drumData} from "./components/drumpad";
 import "./james-owen-653039-unsplash.jpg"
 
@@ -37,7 +38,7 @@ class App extends Component {
         <div id="drum-machine">
           <h1 className="title-drum-machine">Drum Machine</h1>
           <div id="display"><h1>{display}</h1></div>
-          <button onClick={this.ToggleSwitch}>
+          <button onClick={this.ToggleSwitch} className="PowerButton">
             {this.state.power ? 'ON' : 'OFF'}
           </button>
 
@@ -63,11 +64,5 @@ class App extends Component {
     );
   }
 }
-let url = "https://unsplash.com/photos/BrcnQWVQytk"
-// var sectionStyle = {
-//   width: "100%",
-//   height: "400px",
-//   backgroundImage:`url(${url})`
-// };
 
 export default App;
